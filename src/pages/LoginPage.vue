@@ -1,17 +1,24 @@
 <template>
   <q-layout>
     <q-page-container>
-      <q-page class="row justify-center items-center">
+      <q-page class="flex bg-image flex-center">
 
-        <q-card class="my-card q-pa-md">
-          <q-card-section class="bg-primary text-white glossy">
-            <div class="text-h6">Login</div>
-            <div class="text-subtitle2">Industrial Automation Solution (IAS)</div>
+        <q-card v-bind:style="$q.screen.lt.sm ? { 'width': '80%' } : { 'width': '30%' }">
+          <q-card-section>
+            <q-avatar size="103px" class="absolute-center shadow-10">
+              <img src="profile.svg">
+            </q-avatar>
           </q-card-section>
-          <q-separator />
+          <q-card-section>
+            <div class="text-center q-pt-lg">
+              <div class="col text-h6 ellipsis">
+                Log in
+              </div>
+            </div>
+          </q-card-section>
+          <q-card-section>
+            <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
 
-          <q-form @submit="onSubmit" @reset="onReset" class="q-gutter-md">
-            <q-card-section>
               <q-input dense filled v-model="name" label="User Name" outlined lazy-rules
                 :rules="[val => val && val.length > 0 || 'Please type your username']">
                 <template v-slot:prepend>
@@ -26,13 +33,14 @@
                 </template>
               </q-input>
               <q-toggle dense v-model="accept" label="I accept the license and terms" />
-            </q-card-section>
 
-            <q-card-actions align="right">
-              <q-btn dense label="Submit" type="submit" color="primary" />
-              <q-btn dense label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-            </q-card-actions>
-          </q-form>
+
+              <q-card-actions align="right">
+                <q-btn dense label="Submit" type="submit" color="primary" />
+                <q-btn dense label="Reset" type="reset" color="accent" />
+              </q-card-actions>
+            </q-form>
+          </q-card-section>
         </q-card>
       </q-page>
     </q-page-container>
@@ -86,8 +94,9 @@ export default {
   }
 }
 </script>
-<style lang="sass" scoped>
-.my-card
-  width: 100%
-  max-width: 500px
+<style>
+.bg-image {
+  background-image: url("webofwires.jpg");
+  /* background-color: linear-gradient(135deg, #0d31f9 0%, #e5b2ca 100%); */
+}
 </style>
