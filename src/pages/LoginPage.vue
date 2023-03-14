@@ -36,8 +36,8 @@
 
 
               <q-card-actions align="right">
-                <q-btn dense label="Submit" type="submit" color="primary" />
-                <q-btn dense label="Reset" type="reset" color="accent" />
+                <q-btn dense label="Submit" type="submit" color="primary" @click.prevent="onSubmit" />
+                <q-btn dense label="Reset" type="reset" color="accent" @click.prevent="onReset" />
               </q-card-actions>
             </q-form>
           </q-card-section>
@@ -96,7 +96,7 @@ export default {
 </script>
 <style>
 .bg-image {
-  background-image: url("webofwires.jpg");
-  /* background-color: linear-gradient(135deg, #0d31f9 0%, #e5b2ca 100%); */
+  /*background-image: url("lovepik-industrial-robot.jpg");*/
+  background-color: linear-gradient(135deg, #0d31f9 0%, #e5b2ca 100%);
 }
 </style>

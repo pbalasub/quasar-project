@@ -137,17 +137,17 @@
 import { ref } from 'vue'
 
 export default {
-  setup() {
+  data() {
     return {
       check1: ref(true),
       check2: ref(false),
-      check3: ref(false),
+      check3: ref(true),
 
       notif1: ref(true),
       notif2: ref(true),
       notif3: ref(false),
 
-      volume: ref(6),
+      volume: ref(10),
       brightness: ref(3),
       mic: ref(8)
     }
